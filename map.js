@@ -40,7 +40,7 @@ let geojsonLayer = null;
 let currentSic = DEFAULT_SIC;
 
 function styleFeature(feature) {
-  const code = feature.properties.LAD21CD;
+  const code = feature.properties.LAD23CD;
   const ladData = AGGLOMERATION_DATA[code];
   if (!ladData) {
     return { fillColor: '#cccccc', fillOpacity: 0.4, color: '#999', weight: 0.5 };
@@ -67,8 +67,8 @@ function highlightFeature(e) {
   layer.bringToFront();
 
   const props = layer.feature.properties;
-  const code = props.LAD21CD;
-  const name = props.LAD21NM;
+  const code = props.LAD23CD;
+  const name = props.LAD23NM;
   const ladData = AGGLOMERATION_DATA[code];
 
   const panel = document.getElementById('hover-info');
