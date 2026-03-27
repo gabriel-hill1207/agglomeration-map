@@ -3,17 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive Map</title>
+  <title>LAD Agglomeration Map</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="sidebar">
-    <h2 id="sidebar-title">Interactive Map</h2>
-    <div id="sidebar-content">
-      <p>Click a point on the map to see details here.</p>
+    <div id="sidebar-header">
+      <h1>Agglomeration Scores</h1>
+      <p class="subtitle">Best to worst LAD for placing a new worker</p>
+    </div>
+
+    <div id="controls">
+      <label for="sic-select">Select industry</label>
+      <select id="sic-select"></select>
+    </div>
+
+    <div id="legend">
+      <div class="legend-title">Agglomeration rank</div>
+      <div class="legend-scale">
+        <div class="legend-bar"></div>
+        <div class="legend-labels">
+          <span>Best (#1)</span>
+          <span>Worst (#318)</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="hover-info">
+      <p class="placeholder">Hover over an area to see details</p>
     </div>
   </div>
+
   <div id="map"></div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
